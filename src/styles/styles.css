@@ -13,12 +13,13 @@ body, html {
 }
 
 :root {
-    --cor-primaria: ;
-    --cor-secundaria: ;
-    --cor-tercearia: ;
+    --cor-neutra1: rgb(29, 29, 29);
+    --cor-neutra2: rgb(236, 236, 236);
+    --cor-primaria: #00a6e2;
+    --cor-secundaria: #76B4CA;
+    --cor-tercearia: #e6f4f1;
     --font-primaria: 'Lora';
     --font-secundaria: 'Roboto';
-    --scale1: (1.1);
     --espacamento1: 1.8rem;
     --espacamento2: ;
 }
@@ -28,11 +29,11 @@ body, html {
     width: 100%;
     position: absolute;
     top: 0;
-    background-color: aqua;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0rem 1.8rem 0rem 1.8rem;
+    z-index: 3;
 }
 
 .lado-esquerdo img {
@@ -42,19 +43,73 @@ body, html {
 .lado-direito {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: var(--espacamento1);
 }
 
 .lado-direito a {
     text-decoration: none;
-    font-family: var(--font-primaria);
+    font-family: var(--font-secundaria);
     font-size: 0.9rem;
+    color: var(--cor-neutra2);
+}
+
+.contate a {
+    display: inline-block;
+    border: none;
+    border-radius: 5px;
+    padding: 0.4em 0.7rem;
+    background-color: var(--cor-primaria);
+    transition: all 0.3s ease-in-out;
+}
+
+.contate a:hover {
+    transform: scale(0.95);
 }
 
 #hero {
     width: 100%;
     height: 100vh;
     display: flex;
-    align-items: center;
+    align-items: end;
     justify-content: center;
+    background-color: var(--cor-neutra1);
+    z-index: 3;
+}
+
+#hero::before {
+    content: "";
+    background: url(../images/fotosala2.jpeg) no-repeat center/cover;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    opacity: 0.2;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    margin: 0rem 1.8rem 3rem 1.8rem;
+    gap: 60rem;
+    color: var(--cor-neutra2);
+}
+
+.titulo-hero{
+    max-width: 400px;
+    font-size: 25px;
+}
+
+.descricao-hero {
+    max-width: 500px;
+    font-size: 18px;
+}
+
+.botao-descricao {
+    margin-top: 1rem;
+}
+
+.botao-descricao a{
+    text-decoration: none;
+    color: var(--cor-neutra2);
 }
