@@ -28,6 +28,8 @@ html {
     --espacamento2: ;
 }
 
+/* NAV BAR */
+
 .nav-bar {
     height: 10vh;
     width: 100%;
@@ -38,6 +40,97 @@ html {
     justify-content: space-between;
     padding: 0rem 1.8rem 0rem 1.8rem;
     z-index: 3;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: var(--espacamento1);
+    align-items: center;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: var(--cor-neutra2);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+#menu-toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+
+    .nav-bar {
+    padding: 0rem 0rem 0rem 0rem;
+}
+    /* checkbox do menu (controla abertura) */
+    #menu-toggle {
+        display: none;
+    }
+
+    .hamburger {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+    }
+
+    .hamburger span {
+        width: 28px;
+        height: 3px;
+        background: var(--cor-neutra2);
+        border-radius: 3px;
+        transition: all 0.3s ease;
+    }
+
+    /* animação do X quando ativo */
+    #menu-toggle:checked ~ .hamburger span:nth-child(1) {
+        transform: rotate(45deg) translate(7px, 7px);
+    }
+
+    #menu-toggle:checked ~ .hamburger span:nth-child(2) {
+        opacity: 0;
+    }
+
+    #menu-toggle:checked ~ .hamburger span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--cor-neutra1);
+        flex-direction: column;
+        padding: 0rem;
+        gap: 1rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease, padding 0.4s ease;
+        z-index: 2;
+    }
+
+    #menu-toggle:checked ~ .nav-links {
+        max-height: 500px;
+        padding: 1.2rem 1.8rem;
+    }
+
+    .nav-links li a {
+        font-size: 1rem;
+        color: var(--cor-neutra2);
+    }
+
+    .lado-direito > a {
+        display: none;
+    }
+
+    .nav-links li.contate {
+        display: none;
+    }
 }
 
 .lado-esquerdo {
@@ -62,7 +155,7 @@ html {
     color: var(--cor-neutra2);
 }
 
-.contate {
+.nav-links li.contate > a {
     display: flex;
     white-space: nowrap;
     border: none;
@@ -70,11 +163,11 @@ html {
     padding: 0.4em 0.7rem;
     background-color: var(--cor-primaria);
     transition: all 0.3s ease-in-out;
+    color: var(--cor-neutra2);
 }
 
-.contate:hover {
+.nav-links li.contate > a:hover {
     background-color: #004fe2;
-    /* transform: scale(1.05); */
 }
 
 #hero {
