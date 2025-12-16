@@ -25,7 +25,7 @@
 
     <meta name="robots" content="index, follow"/>  
     <meta name="author" content="Mateus Araujo"/>
-    <link rel="shortcut icon" type="images/png" href="./src/assets/logocmf.png">
+    <link rel="shortcut icon" type="images/png" href="./src/images/cmflogo-bordado-removebg-preview.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="stylesheet" href="./src/styles/styles.css">
     <title>CMF - Curso Matemática Fácil</title>
@@ -43,10 +43,10 @@
             <!-- NAV BAR -->
             
             <nav class="nav-bar">
-                <div class="lado-esquerdo">
+                <div class="left-side">
                     <a href="#"><img src="./src/images/logotipo-branca.png" alt="Logotipo CMF"></a>
                 </div>
-                <div class="lado-direito">
+                <div class="right-side">
                     <input type="checkbox" id="menu-toggle" aria-label="Abrir menu">
                     <label for="menu-toggle" class="hamburger" aria-hidden="true">
                         <span></span>
@@ -65,14 +65,14 @@
             </nav>
 
             <div class="hero-content">
-                <div class="titulo-hero">
+                <div class="hero-title">
                     <h1>Aprender pode ser simples. Ensinar é a nossa paixão.</h1>
                 </div>
-                <div class="descricao-hero">
+                <div class="hero-description">
                     <p>Há mais de 20 anos transformamos a relação dos alunos com a matemática, física e química com um ensino personalizado, acolhedor e feito para cada necessidade. Aqui, o aprendizado é leve, adaptado e pensado para quem quer entender de verdade.</p>
-                    <div class="botao-descricao">
-                        <a href="#" id="sobrenos" >Sobre nós</a>
-                        <a href="#">Entre em contato</a>
+                    <div class="btns-descricao">
+                        <a href="#" class="btn-descricao sobrenos">Sobre nós</a>
+                        <a href="#" class="btn-descricao">Entre em contato</a>
                     </div>
                 </div>
             </div>
@@ -82,7 +82,33 @@
         <!-- ABOUT US -->
 
         <section id="about">
-            
+            <div class="about-container">
+                    <div class="about-image">
+                        <img src="./src/images/logocmf.png" alt="Professor(a) ensinando">
+                    </div>
+                <div class="about-content">
+                    <span class="about-badge"><i class="fa-solid fa-lightbulb"></i>Sobre Nós</span>
+                    <h2>Paixão. Inclusão. Transformação.</h2>
+                    <p>Fundada em 2013 em Aracaju, a CMF nasceu com o propósito de revolucionar o ensino de matemática. Após um ano de sucesso, expandiu para todas as disciplinas de exatas (matemática, física e química). Desenvolveu especialização única em neuroeducação matemática para alunos com neurodivergências. Há mais de uma década, é referência em educação personalizada e inclusiva em Sergipe, transformando desafios acadêmicos em conquistas reais através de metodologias inovadoras e atendimento individualizado.</p>
+                    <p>Nossa missão é tornar o aprendizado de exatas acessível, prático e prazeroso, mostrando que todo aluno é capaz de aprender desde que receba o suporte certo.</p>
+                    
+                    <div class="about-stats">
+                        <div class="stat">
+                            <div class="stat-value">+12</div>
+                            <div class="stat-label">Anos de experiência</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">+250</div>
+                            <div class="stat-label">Alunos aprovados</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">98%</div>
+                            <div class="stat-label">Dos alunos satisfeitos</div>
+                        </div>
+                    </div>
+                    <!-- <a class="btn btn-primary" href="#">Learn More <i class="fa-solid fa-arrow-right"></i></a> -->
+                </div>
+            </div>
         </section>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
