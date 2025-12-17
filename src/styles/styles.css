@@ -14,6 +14,7 @@ body, html {
 html {
     overflow-x: hidden;
     overflow-y: scroll;
+    scroll-behavior: smooth;
 }
 
 :root {
@@ -23,6 +24,7 @@ html {
     --cor-secundaria: #76B4CA;
     --cor-tercearia: #e6f4f1;
     --cor-texto-descricao: #666;
+    --cor-de-fundo: #f5ece0d0;
     --font-primaria: 'Lora';
     --font-secundaria: 'Roboto';
     --espacamento1: 1.8rem;
@@ -195,7 +197,7 @@ html {
     display:flex;
     align-items:center;
     justify-content:center;
-    background: var(--cor-neutra2);
+    background: var(--cor-de-fundo);
     color: var(--cor-neutra1);
 }
 
@@ -300,7 +302,7 @@ html {
 #howitworks {
     height: 60vh;
     width: 100%;
-    background-color: var(--cor-neutra2);
+    background-color: var(--cor-de-fundo);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -310,6 +312,7 @@ html {
 .howitworks-content {
     width: min(50%, 600px);
     text-align: center;
+    margin-top: var(--espacamento1);
 }
 
 .howitworks-content h1 {
@@ -328,27 +331,30 @@ html {
     right: 10%;
 } */
 
+/* CARD*/ 
+
 .cards-container {
     width: 100%;
-    margin-top: calc(var(--espacamento1) * 4);
+    margin-top: calc(var(--espacamento1) * 2);
+    margin-bottom: 4rem;
     display: flex;
-    align-items: center;
-    justify-content: space-around;
+    align-items: stretch;
+    justify-content: center;
+    gap: 8rem;
 }
-
-/* CARD*/ 
 
 .card {
     width: 280px;
     background: var(--cor-neutra2);
     border-radius: 10px;
     padding: 50px 30px;
-    position: static;
+    position: relative;
     overflow: hidden;
     align-items: center;
     justify-content: center;
     box-shadow: 0 0 10px #4445;
     cursor: pointer;
+    transition: box-shadow 0.4s ease-in-out;
 }
 
 .icon,
@@ -425,14 +431,153 @@ html {
     color: var(--cor-neutra2);
 }
 
-/* CARROSSEL */
+/* ÁREAS DA EDUCAÇÃO */
 
-#carrossel {
-    height: 30vh;
+#education {
+    height: 100vh;
     width: 100%;
-    background-color: var(--cor-neutra2);
+    background-image: linear-gradient(to right bottom, #00a6e2, #35aadc, #4faed5, #63b1cf, #76b4ca);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
+.education-context {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.education-title {
+    width: 150px;
+}
+
+.education-description {
+    width: 150px;
+}
+
+.education-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.education-content img {
+    width: 150px;
+    object-fit: cover;
+}
+
+/* CARDS */
+
+.education-cardscontainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+
+.education-cards {
+    display: flex;
+    flex-direction: column;
+    isolation: isolate;
+    position: relative;
+    width: 18rem;
+    height: 8rem;
+    background: #29292c;
+    border-radius: 1rem;
+    overflow: hidden;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 16px;
+    --gradient: linear-gradient(to bottom, #2eadff, #3d83ff, #7e61ff);
+    --color: #32a6ff
+}
+
+.education-cards:before {
+    position: absolute;
+    content: "";
+    inset: 0.0625rem;
+    border-radius: 0.9375rem;
+    background: #18181b;
+    z-index: 2
+}
+
+.education-cards:after {
+    position: absolute;
+    content: "";
+    width: 0.25rem;
+    inset: 0.65rem auto 0.65rem 0.5rem;
+    border-radius: 0.125rem;
+    background: var(--gradient);
+    transition: transform 300ms ease;
+    z-index: 4;
+}
+
+.education-cards:hover:after {
+    transform: translateX(0.15rem)
+}
+
+.card-title {
+    color: var(--color);
+    padding: 0.65rem 0.25rem 0.4rem 1.25rem;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: transform 300ms ease;
+    z-index: 5;
+}
+
+.education-cards:hover .card-title {
+    transform: translateX(0.15rem)
+}
+
+.card-subtittle {
+    color: #99999d;
+    padding: 0 1.25rem;
+    transition: transform 300ms ease;
+    z-index: 5;
+}
+
+.education-cards:hover .card-subtittle {
+    transform: translateX(0.25rem)
+}
+
+.card-glow,
+.card-borderglow {
+    position: absolute;
+    width: 20rem;
+    height: 20rem;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle closest-side at center, white, transparent);
+    opacity: 0;
+    transition: opacity 300ms ease;
+}
+
+.card-glow {
+    z-index: 3;
+}
+
+.card-borderglow {
+    z-index: 1;
+}
+
+.education-cards:hover .card-glow {
+    opacity: 0.1
+}
+
+.education-cards:hover .card-borderglow {
+    opacity: 0.1
+}
+
+.note {
+    color: var(--color);
+    position: fixed;
+    top: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 0.9rem;
+    width: 75%;
+}
 
 @media (max-width: 768px) {
     .nav-bar {
