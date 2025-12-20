@@ -1,18 +1,24 @@
 
-const menuLinks = document.querySelectorAll('.nav-links');
+// selecionar apenas âncoras internas (hash links) dentro da nav
+const menuLinks = document.querySelectorAll('.nav-links a[href^="#"]');
 
 export function scrollSmooth (){
     function getDistanceFromTheTop(element) {
         const id = element.getAttribute("href");
-        return document.querySelector(id).offsetTop;
+        const target = document.querySelector(id);
+        if (!target) return 0;
+        return target.offsetTop;
     }
 
     function scrollToSection(event) {
+        // somente interceptar links internos (hash)
         event.preventDefault();
-        const distanceFromTheTop = getDistanceFromTheTop(event.target);
+        const anchor = event.currentTarget;
+        const distanceFromTheTop = getDistanceFromTheTop(anchor);
         smoothScrollTo(0, distanceFromTheTop);
     }
-    
+
+    // anexa handler somente às âncoras internas; links externos (whatsapp) NÃO serão interceptados
     menuLinks.forEach((link) => {
         link.addEventListener("click", scrollToSection);
     });
