@@ -673,7 +673,7 @@ html {
 }
 
 .ceo-image img {
-    width: min(50%, 500px);
+    max-width: 400px;
     object-fit: cover;
 }
 
@@ -884,116 +884,7 @@ html {
 }
 
 @media (max-width: 1024px) {
-    /* NAV BAR */
 
-
-    #hero {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: space-between;
-    background-color: var(--cor-neutra1);
-    z-index: 3;
-}
-
-.hero-content {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: space-around;
-    margin: 0rem 0rem 1.8rem 1.8rem;
-}
-
-.hero-title{
-    font-size: 18px;
-    font-family: var(--font-primaria);
-    margin-left: 0rem;
-}
-
-.hero-description {
-    max-width: 500px;
-    font-size: 16px;
-    font-family: var(--font-secundaria);
-}
-
-.btns-descricao {
-    display: flex;
-    gap: var(--espacamento1);
-    margin-top: 1rem;
-}
-
-/* ABOUT SECTION */
-
-.about-container {
-    flex-direction: column;
-}
-
-.about-content {
-    width: 70%;
-}
-
-/* HOW IT WORK SECTION */
-
-
-.cards-container {
-    flex-direction: column;
-    align-items: center;
-}
-
-/* ÁREAS DA EDUCAÇÃO */
-
-.education-container {
-    flex-direction: column-reverse;
-}
-
-/* ABOUT CEO */
-
-#ceo {
-    height: 100vh;
-    padding: 5.5rem 0rem 3.5rem 0rem;
-    flex-direction: column;
-}
-
-.ceo-content {
-    margin-bottom: 3.5rem;
-}
-
-/* CONTACT */
-
-#contact {
-    flex-direction: column;
-}
-
-.copyright p {
-    font-size: 1.2vw;
-}
-
-.button-container {
-    transform: scale(0.9);
-}
-
-.button-container a {
-    text-decoration: none;
-}
-
-.developer p {
-    font-size: 1.2vw;
-}
-
-.developer p > a {
-    font-size: 1.2vw;
-}
-
-.fast-links a {
-    font-size: 1.2vw;
-}
-}
-
-
-@media (max-width: 768px) {
     .nav-bar {
         padding: 0rem 0rem 0rem 0rem;
     }
@@ -1063,4 +954,185 @@ html {
     .nav-links li.contate {
         display: none;
     }
+
+.hero-content {
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    align-items: start;
+    margin: 0rem 0rem 1.8rem 1.8rem;
+}
+
+.hero-title{
+    margin-top: 10rem;
+    margin-left: 0rem;
+}
+
+/* ABOUT SECTION */
+
+.about-container {
+    flex-direction: column;
+}
+
+.about-content {
+    width: 70%;
+}
+
+.about-image img {
+    max-width: 400px;
+    margin-bottom: var(--espacamento1);
+}
+
+/* HOW IT WORK SECTION */
+
+.cards-container {
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ÁREAS DA EDUCAÇÃO */
+
+.education-container {
+    flex-direction: column-reverse;
+}
+
+/* ABOUT CEO */
+
+#ceo {
+    height: 100vh;
+    padding: 5.5rem 0rem 3.5rem 0rem;
+    flex-direction: column;
+}
+
+.ceo-content {
+    margin-bottom: 3.5rem;
+}
+
+.ceo-image img {
+    max-width: 300px;
+}
+
+/* CONTACT */
+
+#contact {
+    flex-direction: column;
+}
+
+.copyright p {
+    font-size: 1.2vw;
+}
+
+.button-container {
+    transform: scale(0.9);
+}
+
+.button-container a {
+    text-decoration: none;
+}
+
+.developer p {
+    font-size: 1.2vw;
+}
+
+.developer p > a {
+    font-size: 1.2vw;
+}
+
+.fast-links a {
+    font-size: 1.2vw;
+}
+}
+
+@media (max-width: 768px) {
+
+/* HERO */
+
+.hero-title{
+    margin-top: 10rem;
+}
+
+/* ABOUT SECTION */
+
+.about-content {
+    width: 70%;
+}
+
+.about-image img {
+    max-width: 350px;
+}
+
+.about-stats {
+    margin-bottom: 4rem;
+}
+
+  /* ABOUT CEO */
+
+.ceo-content {
+    gap: 1rem;
+}
+
+.ceo-content h2 {
+    font-size: var(--espacamento1);
+}
+
+.ceo-content p {
+    font-size: 1rem;
+}
+
+.ceo-image img {
+    max-width: 300px;
+}
+
+/* CONTACT */
+
+.content-card h1 {
+    font-size: 1.4rem;
+}
+}
+
+@media (max-width: 428px){
+    
+/* HERO */
+
+.hero-title{
+    margin-top: 8rem;
+}
+
+/* ABOUT SECTION */
+
+.about-content {
+    width: 70%;
+}
+
+.about-image img {
+    max-width: 350px;
+}
+
+.about-stats {
+    margin-bottom: 4rem;
+}
+
+  /* ABOUT CEO */
+
+.ceo-content {
+    gap: 1rem;
+}
+
+.ceo-content h2 {
+    font-size: var(--espacamento1);
+}
+
+.ceo-content p {
+    font-size: 1rem;
+}
+
+.ceo-image img {
+    max-width: 300px;
+}
+
+/* CONTACT */
+
+.content-card h1 {
+    font-size: 1.4rem;
+}
 }
