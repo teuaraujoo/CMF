@@ -1270,18 +1270,18 @@ html {
 }
 
 .developer p {
-    font-size: 0.3rem;
+    font-size: 0.4rem;
 }
 
 .developer p > a {
-    font-size: 0.3rem;
+    font-size: 0.4rem;
 }
 
 .fast-links {
-    gap: 0.5rem;
+    gap: 0.3rem;
 }
 
 .fast-links a {
-    font-size: 0.3rem
+    font-size: 0.4rem
 }
 }
